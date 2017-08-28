@@ -1,0 +1,52 @@
+<html>
+<head>
+</head>
+<body>
+<script>
+//a) Create the two arrays below, spelled exactly as they are given.
+var boys = ["Peter", "lars", "Ole"];
+var girls = ["Janne", "hanne", "Sanne"];
+
+//b) Create a new array called all, which should be a concatenation of the two arrays given above, starting with the boys and ending with the girls.
+var all = boys.concat(girls);
+console.log(all);
+
+//c) The array type has a cool method to reduce an array into a single string join() (you will love this method)
+//·         Create a comma separated string containing all the names from the all-array, separated by commas.
+//·         Create a hyphen (-) separated string containing all the names from the all-array, separated by hyphens.
+var allStrComma = all.join(","); //(comma er default, men jeg viser bare defineringen alligevel)
+var allStrHyphen = all.join("-");
+console.log(allStrComma);
+console.log(allStrHyphen);
+
+//d)  Add the names Lone and Gitte to the end of the array (remember, all can be done in one-liners)
+all.push("Lone", "Gitte"); //push = default bagerst i array
+console.log(all);
+
+//e)  Add the names Hans and Kurt to the start of the array
+all.unshift("Hans", "Kurt"); //unshift = default starten i array
+console.log(all);
+
+//f)  Remove the first name in the array (Hans)
+all.shift(); //fjerner første element
+console.log(all);
+
+//g)  Remove the last name from the array (Gitte)
+all.splice(-1); //1 element bliver fjernet, default er det bagerste.
+console.log(all);
+
+//h) Remove Ole and Janne from the middle of the array
+for(var i = 0; i < all.length; i++){
+	if(all[i] === "Ole" || all[i] === "Janne"){
+	all.splice(i,1);
+	i = 0; //i starter i element 0 igen.
+	}
+}
+console.log(all);
+
+//i) Sanne thinks it’s unfair that the boys have to come first, reverse the all array, so that the girls come first.
+all.reverse();
+console.log(all);
+</script>
+</body>
+</html>
